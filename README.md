@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/npm/dt/delpoyerjs.svg?style=flat-square" height="25"/>
 </a>
 
-#### Why Another Deployement Tool ?
+#### Why Another Deployment Tool ?
 
 Pure javascript, no binary needed on the local machine, forget about under-the-hood `shellscript` or `rsync`/`ssh` binary spawn. I just want to run this tool everywhere (even under windows, yes, windows) i can run NodeJS.
 
@@ -20,16 +20,16 @@ deployer rollback      <environement|group> [file] [n]   # revert to [n]th last
 deployer currrent      <environement|group> [file]       # output current release commit
 deployer previous      <environement|group> [file]       # output previous release commit
 deployer execute <cmd> <environement|group> [file]       # execute the given <cmd>
-deployer list          <environement|group> [file]       # list previous deployements
+deployer list          <environement|group> [file]       # list previous deployments
 ```
 
 ### CLI options
 
 You can specify some options when using the CLI : 
 
-- `-d` or `--details` when set to true, a file containing detailed logs of the deployement will be created in the current directory
+- `-d` or `--details` when set to true, a file containing detailed logs of the deployment will be created in the current directory
 - `-s [strategy]` or `--strategy [strategy]` choose the strategy used to deploy, [see below for explanation](https://github.com/vmarchaud/deployerjs#deployement-strategy)
-- `-r [reporter]` or `--reporter [reporter]`  choose the reporter used to show deployement info, [see below for explanation](https://github.com/vmarchaud/deployerjs#deployment-reporter)
+- `-r [reporter]` or `--reporter [reporter]`  choose the reporter used to show deployment info, [see below for explanation](https://github.com/vmarchaud/deployerjs#deployment-reporter)
 
 
 # Configuration
@@ -43,7 +43,7 @@ DeployerJS is based on the configuration architecture of [PM2](https://github.co
       "host": "127.0.0.1:22"                                // host adress + ssh port
       "ref": "origin/master",                               // remote branch
       "repo": "git@github.com:vmarchaud/deployerjs.git",    // git repo
-      "path": "/home/totallynotroot/myprod/",               // path where the deployement will be done 
+      "path": "/home/totallynotroot/myprod/",               // path where the deployment will be done 
       "passphrase" : true,                                  //  if my rsa key have a passphrase
       "post-deploy": "npm install",                         // will be executed after update on remote system
       "post-deploy-local": "touch deploy.done",             // will be executed after update on local system
